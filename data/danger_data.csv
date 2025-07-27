@@ -1,0 +1,5 @@
+tile_type,enemy_type,noise_level,light_level,danger
+0,0,20,80,0
+1,1,60,30,1
+0,1,50,60,1
+1,0,10,90,0
