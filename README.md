@@ -1,71 +1,111 @@
-Escape The Maze
+# Escape The Maze
 
-**Escape The Maze** is a Python-based pathfinding visualization project that demonstrates intelligent agent behavior in solving maze puzzles using various search and decision algorithms.
+**Escape The Maze** is a Python project that demonstrates intelligent agent behavior in solving randomly generated maze puzzles using search algorithms and decision trees. The project includes both static and animated visualizations to help you understand the AI's logic and pathfinding process.
 
-Overview
+---
 
-This project simulates an agent navigating through a maze using search algorithms and decision trees. It includes both static and animated visualizations to better understand the underlying logic of the AI's movements.
+## Features
 
-Project Structure
+- **Maze Generation:** Randomly generates mazes with obstacles and enemies.
+- **AI Agent:** Uses a decision tree to predict danger and A\* search for pathfinding.
+- **Visualization:**
+  - Static visualization with Pygame.
+  - Animated visualization showing the agent's movement and decisions.
+- **Customizable:** Easily adjust maze size and agent logic.
+
+---
+
+## Project Structure
 
 ```
-Escape The Maze/
+Escape-The-Maze/
 ├── agent.py                 # Agent logic and movement
 ├── maze.py                  # Maze creation and representation
-├── search.py                # Search algorithms (e.g., BFS, DFS, A*)
-├── decision_tree_model.py   # Decision tree model for maze solving
-├── visualizer.py            # Static visualizer
-├── animated_visualizer.py   # Animated visualizer using matplotlib
-├── main.py                  # Main entry point of the application
-└── .vs/                     # Visual Studio settings (can be ignored)
+├── search.py                # Search algorithms (A*)
+├── decision_tree_model.py   # Decision tree model for danger prediction
+├── visualizer.py            # Static visualizer (Pygame)
+├── animated_visualizer.py   # Animated visualizer (Pygame)
+├── main.py                  # Main entry point
+├── data/
+│   └── danger_data.csv      # Training data for decision tree
+├── models/
+│   └── decision_tree.pkl    # Saved decision tree model
+└── requirements.txt         # Python dependencies
 ```
 
-How to Run
+---
 
-Prerequisites
+## Installation
 
-Make sure you have Python 3.7+ installed. Then install required libraries:
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/Escape-The-Maze.git
+   cd Escape-The-Maze
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+   If `requirements.txt` is missing, install manually:
+   ```bash
+   pip install pygame scikit-learn pandas matplotlib numpy
+   ```
+
+---
+
+## Usage
+
+### 1. Train the Decision Tree Model
+
+Before running the maze, ensure the decision tree model is trained:
 
 ```bash
-pip install -r requirements.txt
+python decision_tree_model.py
 ```
 
-> If `requirements.txt` is missing, install these manually:
-
-```bash
-pip install matplotlib numpy
-```
-
-Running the Project
-
-To start the maze simulation:
+### 2. Run the Main Simulation
 
 ```bash
 python main.py
 ```
 
-This will generate and visualize a maze with the agent solving it.
+### 3. Visualize the Maze
 
-Features
-
-- Maze generation and solving
-- AI agent using decision trees
-- BFS, DFS, and possibly A* search
-- Animated and static visualizations using `matplotlib`
-
-
-To-Do
-
-- Add A* search
-- Improve UI/UX
-- Add GUI using `tkinter` or `pygame`
-- Support for custom mazes
-
-
-License
-
-This project is licensed under the MIT License — feel free to use and modify!
+- **Static Visualization:**
+  ```bash
+  python visualizer.py
+  ```
+- **Animated Visualization:**
+  ```bash
+  python animated_visualizer.py
+  ```
 
 ---
 
-Created with ❤️ using Python.
+## Customization
+
+- **Maze Size:** Change `rows` and `cols` in `main.py`, `visualizer.py`, or `animated_visualizer.py`.
+- **Agent Logic:** Modify `agent.py` to experiment with different AI behaviors.
+
+---
+
+## To-Do
+
+- Add more search algorithms (BFS, DFS)
+- Improve UI/UX
+- Add GUI options (Tkinter, Pygame menus)
+- Support for custom maze input
+
+---
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## Credits
+
+Created with ❤️ by Hamza.
